@@ -1,0 +1,27 @@
+﻿<Window x:Class="LB7_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LB7_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Border Padding="10px" Background="Coral" Height="40px">
+            <DockPanel>
+                <TextBlock VerticalAlignment="Center" FontFamily="Calibry" FontSize="16px">LB7 - WPF. Variant(6) - Andronchyk</TextBlock>
+            </DockPanel>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <Button Click="Task1_Btn_OnClick" Margin="20px">Task1: Build Random figures</Button>
+            <Button Click="Task2_Btn_OnClick" Margin="20px">Task2: Build fir tree</Button>
+            <Button Click="Task3_Btn_OnClick" Margin="20px">Task3: Build different sided triangle rotating around its mass center</Button>
+            <Button Click="Task4_Btn_OnClick" Margin="20px">Task4: Build jumping human</Button>
+        </StackPanel>
+    </Grid>
+</Window>
