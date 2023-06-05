@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:LB7_2"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="FourthTaskWindow" Height="450" Width="800">
     <Grid VerticalAlignment="Top">
@@ -30,6 +31,16 @@
                                 Duration="0:0:1"
                                 RepeatBehavior="Forever"
                                 AutoReverse="True"/>
+                            
+                            <DoubleAnimation
+                                x:Name="LeftArmAnimation"
+                                Storyboard.TargetName="LeftArm"
+                                Storyboard.TargetProperty="(Canvas.Left)"
+                                From="-20"
+                                To="-100"
+                                Duration="0:0:1"
+                                RepeatBehavior="Forever"
+                                AutoReverse="True" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -38,7 +49,6 @@
             <Path x:Name="Human" Stroke="Black" StrokeThickness="2">
                 <Path.Data>
                     <PathGeometry>
-                        <PathGeometry.Figures>
                             <PathFigure x:Name="RightLeg" StartPoint="0, -150">
                                 <LineSegment Point="75, 0" />
                             </PathFigure>
@@ -54,10 +64,12 @@
                             <PathFigure x:Name="RightArm" StartPoint="0, -250">
                                 <LineSegment Point="20, -170" />
                             </PathFigure>
-                            <PathFigure x:Name="Head" StartPoint="0, -250">
-                                <ArcSegment Point="-250, -250" Size="10, 10"  SweepDirection="Clockwise" />
+                            <PathFigure x:Name="HeadRight" StartPoint="0, -250" >
+                                <ArcSegment Point="0, -290" IsLargeArc="True" RotationAngle="45" Size="15, 15" SweepDirection="CounterClockwise" />
                             </PathFigure>
-                        </PathGeometry.Figures>
+                            <PathFigure x:Name="HeadLeft" StartPoint="0, -290" >
+                                <ArcSegment Point="0, -250" IsLargeArc="True" RotationAngle="45" Size="15, 15" SweepDirection="Counterclockwise" />
+                            </PathFigure>
                     </PathGeometry>
                 </Path.Data>
             </Path>
